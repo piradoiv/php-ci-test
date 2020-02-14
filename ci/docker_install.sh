@@ -4,8 +4,8 @@
 
 set -xe
 
-apt-get update -yqq
-apt-get install -yqq libcurl4-openssl-dev pkg-config libssl-dev
+apt update -yqq
+apt install -yqq libcurl4-openssl-dev pkg-config libssl-dev
 
 curl --location --output /usr/local/bin/composer https://getcomposer.org/composer-stable.phar
 

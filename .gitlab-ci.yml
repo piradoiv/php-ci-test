@@ -5,4 +5,5 @@ before_script:
 
 test:app:
     script:
-        - ./vendor/bin/phpunit
+        - composer install
+        - php vendor/bin/phpunit tests
