@@ -1,0 +1,8 @@
+image: php:7.4.2
+
+before_script:
+    - bash ci/docker_install.sh > /dev/null
+
+test:app:
+    script:
+        - ./vendor/bin/phpunit
