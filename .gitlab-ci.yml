@@ -8,5 +8,5 @@ test:app:
         - php composer.phar install
         - php vendor/bin/phpunit --log-junit report.xml tests
     artifacts:
-        report:
+        reports:
             junit: report.xml
