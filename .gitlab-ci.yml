@@ -1,5 +1,10 @@
 image: php:7.4.2
 
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - vendor/
+
 before_script:
     - bash ci/docker_install.sh > /dev/null
 
