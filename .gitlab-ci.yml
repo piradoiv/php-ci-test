@@ -1,5 +1,10 @@
 image: php:7.4.2
 
+stages:
+    - test
+    - build
+    - deploy
+
 cache:
   key: ${CI_COMMIT_REF_SLUG}
   paths:
@@ -9,9 +14,26 @@ before_script:
     - bash ci/docker_install.sh > /dev/null
 
 test:app:
+    stage: test
     script:
         - php composer.phar install
         - php vendor/bin/phpunit --log-junit report.xml tests
     artifacts:
         reports:
             junit: report.xml
+
+build:app:
+    stage: build
+    only:
+        refs:
+            - master
+    script:
+        - echo "build"
+
+deploy:app:
+    stage: deploy
+    only:
+        refs:
+            - master
+    script:
+        - echo "deploy"
