@@ -32,6 +32,8 @@ build:app:
 
 deploy:app:
     stage: deploy
+    rules:
+        - when: manual
     only:
         refs:
             - master
