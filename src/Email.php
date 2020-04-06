@@ -33,4 +33,10 @@ final class Email
             );
         }
     }
+
+    public function getDomain(): string
+    {
+        $parts = explode('@', $this->email);
+        return $parts[1];
+    }
 }
