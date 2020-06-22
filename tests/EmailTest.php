@@ -31,7 +31,7 @@ final class EmailTest extends TestCase
     public function testCanGetDomainFromEmail(): void
     {
         $email = 'foo@example.org';
-        $expectedDomain = 'exaple.org';
+        $expectedDomain = 'example.org';
         $emailInstance = Email::fromString($email);
         $this->assertEquals($expectedDomain, $emailInstance->getDomain());
     }
