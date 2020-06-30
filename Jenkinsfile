@@ -4,7 +4,7 @@ pipeline {
     stage('Test') {
       steps {
         sh 'docker build -t php-ci-test:pipeline .'
-        sh 'docker run --rm -it php-ci-test:pipeline cat /app/report.xml > report.xml'
+        sh 'docker run --rm -t php-ci-test:pipeline cat /app/report.xml > report.xml'
         junit 'report.xml'
       }
     }
