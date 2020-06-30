@@ -1,6 +1,9 @@
 pipeline {
     agent {
-        docker { image 'php:7.4.2' }
+        docker {
+            label 'docker'
+            image 'php:7.4.2'
+        }
     }
 
     stages {
