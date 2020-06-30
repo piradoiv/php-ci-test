@@ -1,26 +1,23 @@
 pipeline {
-    agent {
-        docker {
-            label 'docker'
-            image 'php:7.4.2'
-        }
+  agent any
+  stages {
+    stage('Test') {
+      steps {
+        sh 'ls'
+      }
     }
 
-    stages {
-        stage('Test') {
-            steps {
-                sh 'ls'
-            }
-        }
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+    stage('Build') {
+      steps {
+        echo 'Building..'
+      }
     }
+
+    stage('Deploy') {
+      steps {
+        echo 'Deploying....'
+      }
+    }
+
+  }
 }
