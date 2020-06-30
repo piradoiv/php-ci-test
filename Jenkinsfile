@@ -1,7 +1,7 @@
 pipeline {
   agent {
-    docker {
-      image 'php:7.4.2'
+    node {
+      label 'docker'
     }
 
   }
