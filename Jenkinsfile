@@ -9,9 +9,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'ci/docker_install.sh'
-                sh 'php composer.phar install'
-                sh 'php vendor/bin/phpunit --log-junit report.xml tests'
+                sh 'ls'
             }
         }
         stage('Build') {
