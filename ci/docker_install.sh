@@ -4,8 +4,8 @@
 
 set -xe
 
-apt update -yqq
-apt install -yqq libcurl4-openssl-dev pkg-config libssl-dev unzip
+sudo apt update -yqq
+sudo apt install -yqq libcurl4-openssl-dev pkg-config libssl-dev unzip
 
 curl --location --output composer.phar https://getcomposer.org/composer-stable.phar
 
