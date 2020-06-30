@@ -4,9 +4,7 @@ pipeline {
     stage('Test') {
       steps {
         sh 'docker build -t php-ci-test:pipeline .'
-        sh '''docker create --name pipeline-output php-ci-test:pipeline
-docker cp pipeline-output:/app/report.xml .
-docker rm pipeline-output'''
+        sh 'docker run --rm -it php-ci-test:pipeline cat /app/report.xml > report.xml'
       }
     }
 
