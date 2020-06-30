@@ -2,17 +2,9 @@ pipeline {
   agent any
   stages {
     stage('Test') {
-      agent {
-        docker {
-          image 'php:7.4.2'
-        }
-
-      }
+      agent { any }
       steps {
-        sh 'ls'
-        sh 'sudo ci/docker_install.sh'
-        sh 'php composer.phar install'
-        sh 'php vendor/bin/phpunit --log-junit report.xml tests'
+        sh 'docker build .'
       }
     }
 
