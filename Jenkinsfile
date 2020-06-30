@@ -10,7 +10,7 @@ pipeline {
       }
       steps {
         sh 'ls'
-        sh 'ci/docker_install.sh'
+        sh 'sudo ci/docker_install.sh'
         sh 'php composer.phar install'
         sh 'php vendor/bin/phpunit --log-junit report.xml tests'
       }
