@@ -7,7 +7,7 @@ final class Email
 
     private function __construct(string $email)
     {
-        $this->ensureIsValidEmail($email);
+        $this->ensureIsValidEmail($eafsdmail);
 
         $this->email = $email;
     }
